@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 const SERVER_ID = "http://localhost:54780/";
-//var Gpio = require('onoff').Gpio;;
-//var LED = new Gpio(14, 'out'); // this sets the logic pin for output
+var Gpio = require('onoff').Gpio;;
+var LED = new Gpio(14, 'out'); // this sets the logic pin for output
 var rasPiId = null; //this comes from the server
 var timeUnlocked = 2000;
 var fs = require('fs');
@@ -39,7 +39,7 @@ async function app(door) {
 // This actually unlocks the door by  turning on the logic pin
 // which then closed the relay which send power to the door
 // which unlocks the door
-/*function unlock()
+function unlock()
 {
 	if (LED.readSync() ===0)
 	{
@@ -50,7 +50,7 @@ async function app(door) {
 		LED.writeSync(0);
 	}
 }
-*/
+
 
 // This ends the unlock by turning off the pi logic pin
 // Which should  open the relay and remove power  from the door
